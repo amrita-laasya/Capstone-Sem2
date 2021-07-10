@@ -150,13 +150,13 @@ int main()
 		if (toupper(getch())=='C')
 			{
             printf("\n\nCorrect!!!");
-			printf("Roughly one third of the food produced in the world for human consumption every year — approximately 1.3 billion tonnes — gets lost or wasted\nThe amount of food lost or wasted every year is equivalent to more than half of the world's annual cereals crop (2.3 billion tonnes in 2009/2010)");
+			printf("Roughly one third of the food produced in the world for human consumption every year â€” approximately 1.3 billion tonnes â€” gets lost or wasted\nThe amount of food lost or wasted every year is equivalent to more than half of the world's annual cereals crop (2.3 billion tonnes in 2009/2010)");
 			getch();
 			break;
 			}
 		else
 		       {
-		           printf("\n\nWrong!!! The correct answer is C.One-third\n\nRoughly one third of the food produced in the world for human consumption every year — approximately 1.3 billion tonnes — gets lost or wasted\nThe amount of food lost or wasted every year is equivalent to more than half of the world's annual cereals crop (2.3 billion tonnes in 2009/2010)");
+		           printf("\n\nWrong!!! The correct answer is C.One-third\n\nRoughly one third of the food produced in the world for human consumption every year â€” approximately 1.3 billion tonnes â€” gets lost or wasted\nThe amount of food lost or wasted every year is equivalent to more than half of the world's annual cereals crop (2.3 billion tonnes in 2009/2010)");
 		           getch();
 		           break;
                }
@@ -209,7 +209,7 @@ int main()
 			break;
         }
 			 case 6:
-           printf("\n\n\What things you do to manage your food waste.Select your optimal option");
+           printf("\n\nWhat things you do to manage your food waste.Select your optimal option");
            printf("\n\nA.Managing a compost heap\t\tB.Feed pets with leftover food\nC.Donate food to needy/local food bank \tD.Use them as ingredients for tomorrow's meal by simple re-heating \nE. Other (please specify)");
            if (toupper(getch())=='D')
                {scanf("%s",rsn);
