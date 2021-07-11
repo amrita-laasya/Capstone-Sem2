@@ -4,7 +4,10 @@
 #include<stdlib.h>
 #include<string.h>
 #include<windows.h>
-
+//to be changed
+//average for ratings
+//sentence input
+//storing it in file with the name
 void motive();
 void survey();
 void quit();
@@ -203,7 +206,7 @@ int main()
           scanf(" %c",&ch[index]);
           if(ch[index] == 'D' || ch[index] == 'd'){
             printf("\n\n Please Enter Your Comments : ");
-            scanf("%s",suggestion);
+            scanf("%s", suggestion);
             FILE *fptr;
             fptr = fopen("cp team.txt", "w");
             fprintf(fptr, suggestion);
@@ -240,7 +243,7 @@ int main()
              scanf(" %c",&ch[index]);
              if(ch[index] == 'E' || ch[index] == 'e'){
                printf("\n\n Please Enter Your Comments : ");
-               scanf("%s",suggestion);
+               scanf("%s", suggestion);
                FILE *fptr;
                fptr = fopen("cp team.txt", "w");
                fprintf(fptr, suggestion);
