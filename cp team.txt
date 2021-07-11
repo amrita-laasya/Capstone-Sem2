@@ -1,5 +1,5 @@
-hiName : pala
-Contact number :98
-Mail.ID :sd
+noName : ps
+Contact number :34
+Mail.ID :df
 Address :df
 Suggestions : no New ways to preserve : Other reasons for wastage : 	
