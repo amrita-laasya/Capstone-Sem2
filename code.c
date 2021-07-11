@@ -4,10 +4,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<windows.h>
-//to be changed
-//average for ratings
-//sentence input
-//storing it in file with the name
+
 void motive();
 void survey();
 void quit();
@@ -179,17 +176,37 @@ int main()
 		{
 		    printf("\n\n\nHow would you personally rate yourself at managing food waste? 1 being poor and 100 being fantastic?\n");
 		    scanf("%d",&rate);
-		    printf("You have entered %d...... ",rate);
+		    printf("You have entered %d...... \n\n",rate);
+
+        FILE *fptr;
+        int num;
+        float sum=0,count=0;
+        fptr = fopen("integers.txt", "a");
+        putw(rate, fptr);
+        fclose(fptr);
+
+        fptr = fopen("integers.txt", "r");
+        while ( (num = getw(fptr)) != EOF ) {
+          sum += num;
+          count++;
+        }
+        fclose(fptr);
 
         if (rate<=50)
         {
+             printf("Average is (by other users) : %.2f\n\n", (float)(((float)(sum))/((float)(count))));
+
             printf("\nSo you can improve your food management...\nContinue forward to know how!!!");
             // sleep(5);
+            getch();
         }
-             else(rate>50);
+             else
 		 {
+       printf("Average is (by other users) : %.2f\n\n", (float)(((float)(sum))/((float)(count))));
+
 		     printf("\nThat is a great sign of your concern on food management!\nHope you will spread awareness on this regard to your acquaintances also and improve to your better...");
 		     // sleep(5);
+         getch();
 		 }
         }
 
@@ -200,17 +217,18 @@ int main()
 		    printf("\n\n\nWhat measures can be taken to prevent food wastage? ");
         printf("\n\n (MULTIPLE SELECTIONS ALLOWED ! PRESS Q to Quit)");
 		    printf("\n\nA. Plan your meal portion \t\tB.Ensure food freshness before hand\n\nC.Understand dates on your food\t\tD.Specify if any other ");
-        char ch[4],suggestion[100];
+        char ch[4],suggestion[100],final[500];
         int exii = 1,index=0;
         for(int i=0;i<4;i++){
           scanf(" %c",&ch[index]);
           if(ch[index] == 'D' || ch[index] == 'd'){
             printf("\n\n Please Enter Your Comments : ");
             scanf("%s", suggestion);
-            FILE *fptr;
-            fptr = fopen("cp team.txt", "w");
-            fprintf(fptr, suggestion);
-            fclose(fptr);
+            strcpy(sp, suggestion);
+            // FILE *fptr;
+            // fptr = fopen("cp team.txt", "a");
+            // fprintf(fptr, suggestion);
+            // fclose(fptr);
             exii = 0;
           }
           if(ch[index] == 'Q' || ch[index] == 'q'){
@@ -244,10 +262,11 @@ int main()
              if(ch[index] == 'E' || ch[index] == 'e'){
                printf("\n\n Please Enter Your Comments : ");
                scanf("%s", suggestion);
-               FILE *fptr;
-               fptr = fopen("cp team.txt", "w");
-               fprintf(fptr, suggestion);
-               fclose(fptr);
+               strcpy(rsn, suggestion);
+               // FILE *fptr;
+               // fptr = fopen("cp team.txt", "a");
+               // fprintf(fptr, suggestion);
+               // fclose(fptr);
                exii = 0;
              }
              if(ch[index] == 'Q' || ch[index] == 'q'){
@@ -273,14 +292,14 @@ int main()
            {
 
             system("cls");
-	printf("\n\n Being someone who can help is a boon!\n Do you like to contribute for it?\n Kindly, fill in the following details which help us in approaching you :  ");
-      void file();
-    FILE *fp;
-    char name[20],mail[40],add[30],sugg[10];
-    int mobile;
-    fp=fopen("cp team.txt","a");
-    if (fp==NULL)
-    {
+	          printf("\n\n Being someone who can help is a boon!\n Do you like to contribute for it?\n Kindly, fill in the following details which help us in approaching you :  ");
+            void file();
+            FILE *fp;
+            char name[20],mail[40],add[30],sugg[10];
+            int mobile;
+            fp=fopen("cp team.txt","a");
+            if (fp==NULL)
+            {
         printf("error");
         exit(0);
     }else
@@ -299,8 +318,8 @@ int main()
         printf("enter your suggestions (if any) : ");
         scanf("%s",sugg);
         fprintf(fp,"\nSuggestions : %s",sugg);
-        fprintf(fp," New ways to preserve : %s",sp);
-        fprintf(fp,"Other reasons for wastage : %s",rsn);
+        fprintf(fp," New ways to preserve : %s \n",sp);
+        fprintf(fp,"Other reasons for wastage : %s \n\n\n\n",rsn);
     fclose(fp);}
 
 case 8 :
